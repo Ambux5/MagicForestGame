@@ -1,0 +1,10 @@
+# Godot cache
+.godot/
+
+# Exporty
+/export.cfg
+/export_presets.cfg
+
+# Dočasné soubory
+*.tmp
+*.bak

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://qk7fataf62a"]
+
+[ext_resource type="Script" uid="uid://d0pgxxsnh4bt8" path="res://scripts/enemies/forest_goblin.gd" id="1_7eppk"]
+[ext_resource type="PackedScene" uid="uid://co0v5i47kt64y" path="res://assets/goblin.glb" id="2_goblin"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
+radius = 0.25
+height = 1.1
+
+[node name="ForestGoblin" type="CharacterBody3D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_7eppk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+shape = SubResource("CapsuleShape3D_1")
+
+[node name="GoblinModel" parent="." instance=ExtResource("2_goblin")]
+transform = Transform3D(-1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0)
